@@ -356,6 +356,8 @@ public class NotificationPusher {
         request.setHeader(.custom(name: "apns-expiration"), value: "\(expiration.rawValue)")
         request.setHeader(.custom(name: "apns-priority"), value: "\(priority.rawValue)")
 		request.setHeader(.custom(name: "apns-topic"), value: apnsTopic)
+        	request.setHeader(.custom(name: "apns-push-type"), value: "location")
+		
 		if let cid = collapseId {
 			request.setHeader(.custom(name: "apns-collapse-id"), value: cid)
 		}
